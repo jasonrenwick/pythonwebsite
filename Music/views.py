@@ -21,6 +21,12 @@ def profile(request):
 
     for data in jsonlist:
         userdata['name'] = data['name']
+        userdata['email'] = data['email']
+        userdata['public_gists'] = data['public_gists']
+        userdata['public_repos'] = data['public_repos']
+        userdata['avatar_url'] = data['avatar_url']
+        userdata['followers'] = data['followers']
+        userdata['following'] = data['following']
 
-    content = req.text
-    return HttpResponse(content)
+    parseddata.append(userdata)
+    return HttpResponse(parseddata)
