@@ -14,13 +14,13 @@ def test(request):
 
 def profile(request):
     jsonlist = []
-    req = requests.get('https://api.github.com/users/jasonrenwick')
+    req = requests.get('https://api.github.com/users/jonathanchan1')
     jsonlist.append(json.loads(req.content))
     parseddata = []
     userdata = {}
 
     for data in jsonlist:
         userdata['name'] = data['name']
-        
+
     content = req.text
     return HttpResponse(content)
