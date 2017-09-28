@@ -14,7 +14,7 @@ def test(request):
 
 def profile(request):
     jsonlist = []
-    req = requests.get('https://api.github.com/users/jonathanchan1')
+    req = requests.get('https://api.github.com/users/jasonrenwick')
     jsonlist.append(json.loads(req.content))
     parseddata = []
     userdata = {}
