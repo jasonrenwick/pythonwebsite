@@ -29,4 +29,4 @@ def profile(request):
         userdata['following'] = data['following']
 
     parseddata.append(userdata)
-    return HttpResponse(parseddata)
+    return render(request, 'music/profile.html', {'data': parseddata})
