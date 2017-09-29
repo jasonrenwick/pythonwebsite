@@ -22,13 +22,14 @@ def profile(request):
         userdata = {}
 
         for data in jsonlist:
-            userdata['name'] = data['name']
-            userdata['email'] = data['email']
-            userdata['public_gists'] = data['public_gists']
-            userdata['public_repos'] = data['public_repos']
-            userdata['avatar_url'] = data['avatar_url']
-            userdata['followers'] = data['followers']
-            userdata['following'] = data['following']
+            if len(data) > 3:
+                userdata['name'] = data['name']
+                userdata['email'] = data['email']
+                userdata['public_gists'] = data['public_gists']
+                userdata['public_repos'] = data['public_repos']
+                userdata['avatar_url'] = data['avatar_url']
+                userdata['followers'] = data['followers']
+                userdata['following'] = data['following']
 
-        parseddata.append(userdata)
+                parseddata.append(userdata)
     return render(request, 'music/profile.html', {'data': parseddata})
